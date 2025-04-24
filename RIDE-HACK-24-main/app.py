@@ -1,26 +1,69 @@
 from flask import Flask, render_template, request
 
 
+# def therapy(L):
+#     x, y, z = int(L[4]), int(L[5]), int(L[6])
+#     if x == 5 and y == 5 and z == 5:
+#         return "Consult a Doctor"
+#     elif x == 0 and y == 0 and z == 0:
+#         return "Audio Therapy"
+#     elif x == 0 and y == 0 and z > 0:
+#         return "Reading Therapy"
+#     elif x == 0 and y > 0 and z == 0:
+#         return "Yoga Therapy"
+#     elif x > 0 and y == 0 and z == 0:
+#         return "Laughing Therapy"
+#     elif x == 0 and y > 0 and z > 0:
+#         return "Talking Therapy"
+#     elif x > 0 and y == 0 and z > 0:
+#         return "Child Therapy"
+#     elif x > 0 and y > 0 and z == 0:
+#         return "Spiritual Therapy"
+#     else:
+#         return "Special Therapy"
+
+import random
+
+
 def therapy(L):
-    x, y, z = int(L[4]), int(L[5]), int(L[6])
-    if x == 5 and y == 5 and z == 5:
+    stress = int(L[4])
+    depression = int(L[5])
+    anxiety = int(L[6])
+
+    total_score = stress + depression + anxiety
+
+    if stress == 5 and depression == 5 and anxiety == 5:
         return "Consult a Doctor"
-    elif x == 0 and y == 0 and z == 0:
+
+    # Defined patterns
+    if total_score <= 3:
         return "Audio Therapy"
-    elif x == 0 and y == 0 and z > 0:
+    elif stress <= 1 and depression <= 1 and anxiety >= 3:
         return "Reading Therapy"
-    elif x == 0 and y > 0 and z == 0:
+    elif stress <= 1 and depression >= 2 and anxiety <= 1:
         return "Yoga Therapy"
-    elif x > 0 and y == 0 and z == 0:
+    elif stress >= 2 and depression <= 1 and anxiety <= 1:
         return "Laughing Therapy"
-    elif x == 0 and y > 0 and z > 0:
+    elif stress <= 2 and depression >= 2 and anxiety >= 2:
         return "Talking Therapy"
-    elif x > 0 and y == 0 and z > 0:
+    elif stress >= 2 and depression <= 2 and anxiety >= 2:
         return "Child Therapy"
-    elif x > 0 and y > 0 and z == 0:
+    elif stress >= 2 and depression >= 2 and anxiety <= 1:
         return "Spiritual Therapy"
-    else:
-        return "Special Therapy"
+    elif total_score >= 12:
+        return "Consult a Doctor"
+
+    # Balanced fallback options including Special Therapy
+    return random.choice([
+        "Audio Therapy",
+        "Reading Therapy",
+        "Yoga Therapy",
+        "Laughing Therapy",
+        "Talking Therapy",
+        "Child Therapy",
+        "Spiritual Therapy",
+        "Special Therapy"
+    ])
 
 
 app = Flask(__name__)

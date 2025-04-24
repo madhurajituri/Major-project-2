@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,48 +11,67 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            background: linear-gradient(to bottom right, #000000, #005f73); /* Gradient with pink to blue */
+            height: 100vh;
+            /* Full viewport height */
+            background: linear-gradient(to bottom right, #000000, #005f73);
+            /* Gradient with pink to blue */
             padding: 20px;
         }
+
         .result-box {
             max-width: 600px;
             width: 100%;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent light color */
+            background-color: rgba(255, 255, 255, 0.85);
+            /* Semi-transparent light color */
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out; /* Add transition for smooth hover effect */
+            transition: transform 0.3s ease-in-out;
+            /* Add transition for smooth hover effect */
         }
+
         .result-box:hover {
-            transform: scale(1.05); /* Scale up the box on hover */
+            transform: scale(1.05);
+            /* Scale up the box on hover */
         }
+
         h1 {
-            color: #e83e8c; /* Pink */
+            color: #e83e8c;
+            /* Pink */
         }
+
         p {
             font-size: 20px;
-            margin-top: 20px; /* Add some space above the paragraph */
-            margin-bottom: 0; /* Remove margin below the paragraph */
+            margin-top: 20px;
+            /* Add some space above the paragraph */
+            margin-bottom: 0;
+            /* Remove margin below the paragraph */
             color: #ffffff;
         }
+
         b {
-            color: #e83e8c; /* Pink */
+            color: #e83e8c;
+            /* Pink */
         }
+
         .link {
             margin-top: 20px;
             text-align: center;
         }
+
         .link a {
-            color: #dc3545; /* Red */
+            color: #dc3545;
+            /* Red */
             text-decoration: none;
         }
+
         .link a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="result-box">
@@ -59,13 +79,15 @@
             <div>
                 <p>
                     <font color="black"> Your Recommended Therapy is: <b>{{ ans }}</b>
-                    </font> </p>
+                    </font>
+                </p>
             </div>
         </div>
         <div class="link">
             <p>To inculcate this therapy/consultancy: </p>
-            <b><a href="#">Please go back to our home page!</a></b>
+            <b><a href="home.html">Please go back to our home page!</a></b>
         </div>
     </div>
 </body>
+
 </html>
