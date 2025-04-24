@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Form</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Collection Form</h1>
+        <form id="dataForm" action="{{ url_for('read_form') }}" method="POST">
+            <h2>Personal Information</h2>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age (10-99)" min="10" max="99" required>
+
+            <label for="course">Course:</label>
+            <select name="course" id="course" required>
+                <option value="" disabled selected>Select your course</option>
+                <option value="Business">Business</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Law">Law</option>
+                <option value="Medical">Medical</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Academic Information -->
+            <h2>Academic Information</h2>
+            <label for="cgpa">CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" placeholder="Enter your CGPA (0.00 - 10.00)" min="0" max="10" required>
+
+            <!-- Stress, Depression, Anxiety -->
+            <h2>Stress, Depression, Anxiety</h2>
+            <label for="stressLevel">Stress Level:</label>
+            <input type="number" id="stressLevel" name="stressLevel" placeholder="Enter your stress level (0 - 10)" min="0" max="10" required>
+
+            <label for="depressionScore">Depression Score:</label>
+            <input type="number" id="depressionScore" name="depressionScore" placeholder="Enter your depression score (0 - 10)" min="0" max="10" required>
+
+            <label for="anxietyScore">Anxiety Score:</label>
+            <input type="number" id="anxietyScore" name="anxietyScore" placeholder="Enter your anxiety score (0 - 10)" min="0" max="10" required>
+
+
+            <!-- Health and Lifestyle -->
+            <h2>Health and Lifestyle</h2>
+            <label for="sleepQuality">Sleep Quality:</label>
+            <select id="sleepQuality" name="sleepQuality" required>
+                <option value="" disabled selected>Select your sleep quality</option>
+                <option value="Good">Good</option>
+                <option value="Average">Average</option>
+                <option value="Poor">Poor</option>
+            </select>
+
+            <label for="physicalActivity">Physical Activity:</label>
+            <select id="physicalActivity" name="physicalActivity" required>
+                <option value="" disabled selected>Select your physical activity level</option>
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <!-- Additional Information -->
+            <h2>Additional Information</h2>
+            <label for="dietQuality">Diet Quality:</label>
+            <select id="dietQuality" name="dietQuality" required>
+                <option value="" disabled selected>Select your diet quality</option>
+                <option value="Good">Good</option>
+                <option value="Average">Average</option>
+                <option value="Poor">Poor</option>
+            </select>
+
+            <label for="socialSupport">Social Support:</label>
+            <select id="socialSupport" name="socialSupport" required>
+                <option value="" disabled selected>Select your social support level</option>
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+            </select>
+
+
+            <label for="relationshipStatus">Relationship Status:</label>
+            <select id="relationshipStatus" name="relationshipStatus" required>
+                <option value="single">Single</option>
+                <option value="inRelationship">In a Relationship</option>
+                <option value="married">Married</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="substanceUse">Substance Use:</label>
+            <select id="substanceUse" name="substanceUse" required>
+                <option value="" disabled selected>Select your substance use</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Never">Never</option>
+            </select>
+
+            <label for="counselingServiceUse">Counseling Service Use:</label>
+            <select id="counselingServiceUse" name="counselingServiceUse" required>
+                <option value="" disabled selected>Select your counseling service use</option>
+                <option value="Frequently">Frequently</option>
+                <option value="Occasionally">Occasionally</option>
+                <option value="Never">Never</option>
+            </select>
+
+            <label for="familyHistory">Family History:</label>
+            <select id="familyHistory" name="familyHistory" required>
+                <option value="" disabled selected>Select your family history</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="chronicIllness">Chronic Illness:</label>
+            <input type="text" id="chronicIllness" name="chronicIllness" placeholder="Enter your chronic illness (if any)" required>
+
+            <label for="financialStress">Financial Stress:</label>
+            <input type="text" id="financialStress" name="financialStress" placeholder="Enter your financial stress (0 - 5)" required>
+
+            <label for="extracurricularInvolvement">Extracurricular Involvement:</label>
+            <select id="extracurricularInvolvement" name="extracurricularInvolvement" required>
+                <option value="" disabled selected>Select your extracurricular involvement</option>
+                <option value="High">High</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <label for="semesterCreditLoad">Semester Credit Load:</label>
+            <input type="number" id="semesterCreditLoad" name="semesterCreditLoad" placeholder="Enter your semester credit load (10 - 50)" required>
+
+            <label for="residenceType">Residence Type:</label>
+            <select id="residenceType" name="residenceType" required>
+                <option value="onCampus">On-Campus</option>
+                <option value="offCampus">Off-Campus</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
